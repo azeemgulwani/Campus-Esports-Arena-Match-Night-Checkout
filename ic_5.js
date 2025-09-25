@@ -9,14 +9,6 @@ const products = [
   { id: 205, name: "Switchable Keycaps",  category: "gear",    price: 19.0  }
 ];
 
-// Example cart (product & quantity)
-const cart = [
-  { productId: 202, qty: 1 },
-  { productId: 203, qty: 2 },
-  { productId: 204, qty: 1 },
-  { productId: 205, qty: 1 }
-];
-
 // Try: "regular", "student", "member", or "vip"
 const customerType = "member";
 
@@ -47,6 +39,7 @@ function priceAfterCategoryDiscount(product){
 console.log(`$${priceAfterCategoryDiscount(products[1])}`)
 
 // Step 3: 
+
 //function findProductById(id){
   //const p = products.find(prod => prod.id === id);
   //return p || "null";
@@ -67,3 +60,21 @@ console.log(findProductById(201));
 
 // Step 4:
 
+// Example cart (product & quantity)
+const cart = [
+  { productId: 202, qty: 1 },
+  { productId: 203, qty: 2 },
+  { productId: 204, qty: 1 },
+  { productId: 205, qty: 1 }
+];
+
+function lineItemTotal(cartItem){
+  const prod = findProductById(cartItem.productId);
+  if (!prod || cartItem.qty<= 0){
+    return 0
+  }
+  const discountedUnitPrice = priceAfterCategoryDiscount(prod);
+  return (cartItem.qty * discountedUnitPrice).toFixed(2)
+}
+
+console.log(lineItemTotal(cart[1]))
