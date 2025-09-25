@@ -1,0 +1,1 @@
+Its a small, reusable utilities to price match-night orders: peripherals/gear, team apparel, snacks, and access passes. for university’s Esports Arena. It includes functions to calculate per-item category discounts, apply a membership adjustment, and print a tidy receipt.
