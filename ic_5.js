@@ -37,3 +37,11 @@ function getCategoryDiscount(category){
 }
 
 console.log(getCategoryDiscount("apparel"))
+
+// Step 2: 
+function priceAfterCategoryDiscount(product){
+  const rate = getCategoryDiscount(product.category);
+  return (product.price * (1-rate)).toFixed(2);
+}
+
+console.log(`$${priceAfterCategoryDiscount(products[1])}`)
