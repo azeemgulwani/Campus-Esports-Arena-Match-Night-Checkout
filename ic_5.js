@@ -47,12 +47,23 @@ function priceAfterCategoryDiscount(product){
 console.log(`$${priceAfterCategoryDiscount(products[1])}`)
 
 // Step 3: 
+//function findProductById(id){
+  //const p = products.find(prod => prod.id === id);
+  //return p || "null";
+
+//}
+
 function findProductById(id){
-  const p = products.find(prod => prod.id === id);
-  return p || "null";
+  for (let p of products){
+    if (p.id === id){
+      return p
+    }
+    }
 
-}
+  return "null"
 
-console.log(findProductById(202));
+  }
+console.log(findProductById(201));
 
 // Step 4:
+
